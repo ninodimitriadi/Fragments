@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.fragment.Fragments.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notification"
+            app:destination="@id/navigation_notification" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.fragment.Fragments.DashBoardFragment"
+        tools:layout="@layout/fragment_dashboard"
+        android:label="DashBoardFragment" />
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        tools:layout="@layout/fragment_notification"
+        android:name="com.example.fragment.Fragments.NotificationFragment"
+        android:label="NotificationFragment" >
+        <argument
+            android:name="amount"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_explore"
+        tools:layout="@layout/fragment_explore"
+        android:name="com.example.fragment.Fragments.ExploreFragment"
+        android:label="ExploreFragment" />
+</navigation>
